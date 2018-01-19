@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch-slim
 
 LABEL vendor="Nico Herbig <nico@nicoherbig.io>"
 
