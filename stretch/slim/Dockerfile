@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-LABEL vendor="Nico Herbig <nico@nicoherbig.io>"
+LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
 
 # Set Debian frontend to "noninteractive"
