@@ -3,12 +3,12 @@ FROM debian:stretch
 LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
 
-# Set Debian frontend to "noninteractive"
+# Set Debian frontend to "noninteractive".
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 
-# Set time zone to "Europe/Berlin"
+# Set time zone to "Europe/Berlin".
 
 ENV TZ=Europe/Berlin
 
