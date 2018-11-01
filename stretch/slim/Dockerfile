@@ -3,12 +3,12 @@ FROM debian:stretch-slim
 LABEL maintainer="Nico Herbig <nico@nicoherbig.io>"
 
 
-# Set Debian frontend to "noninteractive"
+# Set Debian frontend to "noninteractive".
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 
-# Set time zone to "Europe/Berlin"
+# Set time zone to "Europe/Berlin".
 
 ENV TZ=Europe/Berlin
 
@@ -20,9 +20,17 @@ RUN set -ex \
 # Set locale to "en_US.UTF-8".
 
 RUN set -ex \
+    && if [ -f /etc/dpkg/dpkg.cfg.d/docker ]; then \
+            # If this file exists, we are likely in "debian:xxx-slim" and locales are thus being excluded
+            # so we need to remove that exclusion (since we need locales).
+            grep -q '/usr/share/locale' /etc/dpkg/dpkg.cfg.d/docker; \
+            sed -ri '/\/usr\/share\/locale/d' /etc/dpkg/dpkg.cfg.d/docker; \
+            ! grep -q '/usr/share/locale' /etc/dpkg/dpkg.cfg.d/docker; \
+       fi \
     && apt-get update \
     && apt-get install -y --no-install-recommends locales \
     && rm -rf /var/lib/apt/lists/* \
+    && dpkg-reconfigure locales \
     && localedef -i de_DE -c -f UTF-8 -A /usr/share/locale/locale.alias de_DE.UTF-8 \
     && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
