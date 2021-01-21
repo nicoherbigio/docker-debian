@@ -11,7 +11,9 @@ env:
   DOCKER_IMAGE_CONTEXT_PATH: 9-slim/default/
   DOCKERHUB_IMAGE_TAGS: |
     nicoherbigde/debian:9-slim
+    nicoherbigio/debian:9-slim
     nicoherbigde/debian:stretch-slim
+    nicoherbigio/debian:stretch-slim
 
 jobs:
   build-and-push:

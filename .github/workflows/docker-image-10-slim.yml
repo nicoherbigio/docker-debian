@@ -11,7 +11,9 @@ env:
   DOCKER_IMAGE_CONTEXT_PATH: 10-slim/default/
   DOCKERHUB_IMAGE_TAGS: |
     nicoherbigde/debian:10-slim
+    nicoherbigio/debian:10-slim
     nicoherbigde/debian:buster-slim
+    nicoherbigio/debian:buster-slim
 
 jobs:
   build-and-push:

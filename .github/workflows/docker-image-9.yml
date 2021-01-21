@@ -11,7 +11,9 @@ env:
   DOCKER_IMAGE_CONTEXT_PATH: 9/default/
   DOCKERHUB_IMAGE_TAGS: |
     nicoherbigde/debian:9
+    nicoherbigio/debian:9
     nicoherbigde/debian:stretch
+    nicoherbigio/debian:stretch
 
 jobs:
   build-and-push:
