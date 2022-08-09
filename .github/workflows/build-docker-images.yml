@@ -1,0 +1,95 @@
+name: Docker image CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/**'
+      - '9/**'
+      - '9-slim/**'
+      - '10/**'
+      - '10-slim/**'
+      - '11/**'
+      - '11-slim/**'
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  build-docker-images:
+    runs-on: [ubuntu-20.04]
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [9, 9-slim, 10, 10-slim, 11, 11-slim]
+        include:
+          - version: 9
+            docker-context: 9/default
+            docker-tags: |
+              nicoherbigde/debian:9
+              nicoherbigio/debian:9
+              nicoherbigde/debian:stretch
+              nicoherbigio/debian:stretch
+          - version: 9-slim
+            docker-context: 9-slim/default
+            docker-tags: |
+              nicoherbigde/debian:9-slim
+              nicoherbigio/debian:9-slim
+              nicoherbigde/debian:stretch-slim
+              nicoherbigio/debian:stretch-slim
+          - version: 10
+            docker-context: 10/default
+            docker-tags: |
+              nicoherbigde/debian:10
+              nicoherbigio/debian:10
+              nicoherbigde/debian:buster
+              nicoherbigio/debian:buster
+          - version: 10-slim
+            docker-context: 10-slim/default
+            docker-tags: |
+              nicoherbigde/debian:10-slim
+              nicoherbigio/debian:10-slim
+              nicoherbigde/debian:buster-slim
+              nicoherbigio/debian:buster-slim
+          - version: 11
+            docker-context: 11/default
+            docker-tags: |
+              nicoherbigde/debian:11
+              nicoherbigio/debian:11
+              nicoherbigde/debian:bullseye
+              nicoherbigio/debian:bullseye
+          - version: 11-slim
+            docker-context: 11-slim/default
+            docker-tags: |
+              nicoherbigde/debian:11-slim
+              nicoherbigio/debian:11-slim
+              nicoherbigde/debian:bullseye-slim
+              nicoherbigio/debian:bullseye-slim
+
+    steps:
+      - name: Checkout Git Repository
+        uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          version: v0.6.3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Docker Image and Push to DockerHub
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.docker-context }}
+          no-cache: true
+          push: true
+          tags: ${{ matrix.docker-tags }}
