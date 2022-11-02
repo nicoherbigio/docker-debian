@@ -6,8 +6,6 @@ on:
       - main
     paths:
       - '.github/**'
-      - '9/**'
-      - '9-slim/**'
       - '10/**'
       - '10-slim/**'
       - '11/**'
@@ -23,22 +21,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [9, 9-slim, 10, 10-slim, 11, 11-slim]
+        version: [10, 10-slim, 11, 11-slim]
         include:
-          - version: 9
-            docker-context: 9/default
-            docker-tags: |
-              nicoherbigde/debian:9
-              nicoherbigio/debian:9
-              nicoherbigde/debian:stretch
-              nicoherbigio/debian:stretch
-          - version: 9-slim
-            docker-context: 9-slim/default
-            docker-tags: |
-              nicoherbigde/debian:9-slim
-              nicoherbigio/debian:9-slim
-              nicoherbigde/debian:stretch-slim
-              nicoherbigio/debian:stretch-slim
           - version: 10
             docker-context: 10/default
             docker-tags: |

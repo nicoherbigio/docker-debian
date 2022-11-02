@@ -8,8 +8,6 @@
  * [`bullseye-slim`, `11-slim` (11-slim/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/11-slim/default/Dockerfile)
  * [`buster`, `10` (10/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/10/default/Dockerfile)
  * [`buster-slim`, `10-slim` (10/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/10/default/Dockerfile)
- * [`stretch`, `9` (9/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/9/default/Dockerfile)
- * [`stretch-slim`, `9-slim` (9-slim/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/9-slim/default/Dockerfile)
 
 ## How to get this image
 
