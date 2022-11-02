@@ -4,10 +4,10 @@
 
 ## Supported tags and respective `Dockerfile` links
 
- * [`bullseye`, `11` (11/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/11/default/Dockerfile)
- * [`bullseye-slim`, `11-slim` (11-slim/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/11-slim/default/Dockerfile)
- * [`buster`, `10` (10/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/10/default/Dockerfile)
- * [`buster-slim`, `10-slim` (10-slim/default/Dockerfile)](https://github.com/nicoherbigio/docker-debian/blob/main/10/default/Dockerfile)
+ * [`bullseye`, `11`](https://github.com/nicoherbigio/docker-debian/blob/main/11/default/Dockerfile)
+ * [`bullseye-slim`, `11-slim`](https://github.com/nicoherbigio/docker-debian/blob/main/11-slim/default/Dockerfile)
+ * [`buster`, `10`](https://github.com/nicoherbigio/docker-debian/blob/main/10/default/Dockerfile)
+ * [`buster-slim`, `10-slim`](https://github.com/nicoherbigio/docker-debian/blob/main/10/default/Dockerfile)
 
 ## How to get this image
 
