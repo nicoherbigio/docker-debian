@@ -27,30 +27,22 @@ jobs:
             docker-context: 10/default
             docker-tags: |
               nicoherbigde/debian:10
-              nicoherbigio/debian:10
               nicoherbigde/debian:buster
-              nicoherbigio/debian:buster
           - version: 10-slim
             docker-context: 10-slim/default
             docker-tags: |
               nicoherbigde/debian:10-slim
-              nicoherbigio/debian:10-slim
               nicoherbigde/debian:buster-slim
-              nicoherbigio/debian:buster-slim
           - version: 11
             docker-context: 11/default
             docker-tags: |
               nicoherbigde/debian:11
-              nicoherbigio/debian:11
               nicoherbigde/debian:bullseye
-              nicoherbigio/debian:bullseye
           - version: 11-slim
             docker-context: 11-slim/default
             docker-tags: |
               nicoherbigde/debian:11-slim
-              nicoherbigio/debian:11-slim
               nicoherbigde/debian:bullseye-slim
-              nicoherbigio/debian:bullseye-slim
 
     steps:
       - name: Checkout Git Repository
