@@ -10,6 +10,8 @@ on:
       - '10-slim/**'
       - '11/**'
       - '11-slim/**'
+      - '12/**'
+      - '12-slim/**'
   schedule:
     - cron: '0 1 * * *'
   workflow_dispatch:
@@ -21,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [10, 10-slim, 11, 11-slim]
+        version: [10, 10-slim, 11, 11-slim, 12, 12-slim]
         include:
           - version: 10
             docker-context: 10/default
@@ -43,6 +45,16 @@ jobs:
             docker-tags: |
               nicoherbigde/debian:11-slim
               nicoherbigde/debian:bullseye-slim
+          - version: 12
+            docker-context: 12/default
+            docker-tags: |
+              nicoherbigde/debian:12
+              nicoherbigde/debian:bookworm
+          - version: 12-slim
+            docker-context: 12-slim/default
+            docker-tags: |
+              nicoherbigde/debian:12-slim
+              nicoherbigde/debian:bookworm-slim
 
     steps:
       - name: Checkout Git Repository
