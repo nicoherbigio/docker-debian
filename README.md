@@ -4,8 +4,8 @@
 
 ## Supported tags and respective `Dockerfile` links
 
- * [`bullseye`, `12`](https://github.com/nicoherbigio/docker-debian/blob/main/12/default/Dockerfile)
- * [`bullseye-slim`, `12-slim`](https://github.com/nicoherbigio/docker-debian/blob/main/12-slim/default/Dockerfile)
+ * [`bookworm`, `12`](https://github.com/nicoherbigio/docker-debian/blob/main/12/default/Dockerfile)
+ * [`bookworm-slim`, `12-slim`](https://github.com/nicoherbigio/docker-debian/blob/main/12-slim/default/Dockerfile)
  * [`bullseye`, `11`](https://github.com/nicoherbigio/docker-debian/blob/main/11/default/Dockerfile)
  * [`bullseye-slim`, `11-slim`](https://github.com/nicoherbigio/docker-debian/blob/main/11-slim/default/Dockerfile)
 
