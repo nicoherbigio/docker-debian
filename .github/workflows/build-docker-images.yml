@@ -11,7 +11,7 @@ on:
       - '12/**'
       - '12-slim/**'
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 1 * * 6'
   workflow_dispatch:
 
 jobs:
