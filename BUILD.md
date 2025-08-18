@@ -18,8 +18,8 @@ The following command is required to build the current version.
 
 ```
 # Build the Docker image
-docker build --no-cache --pull --tag nicoherbigde/debian:12 12/default/
-docker build --no-cache --pull --tag nicoherbigde/debian:12-slim 12-slim/default/
+docker build --no-cache --pull --tag nicoherbigde/debian:13 13/default/
+docker build --no-cache --pull --tag nicoherbigde/debian:13-slim 13-slim/default/
 ```
 
 > **Hint:** For building an older version, the directory and file paths as well as the Docker tags must be adjusted accordingly, analogous to the previously mentioned command.
@@ -30,8 +30,8 @@ The following command is required to upload the current version.
 
 ```
 # Upload the Docker image to Docker Hub
-docker push nicoherbigde/debian:12
-docker push nicoherbigde/debian:12-slim
+docker push nicoherbigde/debian:13
+docker push nicoherbigde/debian:13-slim
 ```
 
 > **Hint:** For uploading an older version, the Docker tags must be adjusted accordingly, analogous to the previously mentioned command.
